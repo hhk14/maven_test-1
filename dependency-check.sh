@@ -14,6 +14,10 @@ if [ ! -d "$CACHE_DIRECTORY" ]; then
     echo "Initially creating persistent directory: $CACHE_DIRECTORY"
     mkdir -p "$CACHE_DIRECTORY"
 fi
+if [ ! -d "$(pwd)/webapp/target/odc-reports" ]; then
+    echo "Initially creating persistent directory: $(pwd)/webapp/target/odc-reports"
+    mkdir -p "$(pwd)/webapp/target/odc-reports"
+fi
 
 # Make sure we are using the latest version
 docker pull owasp/dependency-check:$DC_VERSION
